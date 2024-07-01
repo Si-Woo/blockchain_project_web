@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planetchain/component/color.dart';
-import 'package:planetchain/home/info.dart';
+import 'package:planetchain/home/home_en.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -61,23 +61,31 @@ class Home extends StatelessWidget {
                       // ),
                     ],
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      Text(
-                        "한국어",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: textColor),
+                      // Text(
+                      //   "한국어",
+                      //   style: TextStyle(
+                      //       fontWeight: FontWeight.bold, color: textColor),
+                      // ),
+                      // Text(
+                      //   "  |  ",
+                      //   style: TextStyle(
+                      //       fontWeight: FontWeight.bold, color: textColor),
+                      // ),
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeEn()));
+                        },
+                        child: const Text(
+                          "ENG",
+                          style: TextStyle(color: textColor, fontSize: 16),
+                        ),
                       ),
-                      Text(
-                        "  |  ",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: textColor),
-                      ),
-                      Text(
-                        "Eng",
-                        style: TextStyle(color: textColor),
-                      ),
-                      SizedBox(width: 15),
+                      const SizedBox(width: 15),
                     ],
                   ),
                 ],
