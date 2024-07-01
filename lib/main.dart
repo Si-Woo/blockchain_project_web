@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:planetchain/home/home.dart';
-import 'package:planetchain/home/info.dart';
 
 void main() {
   runApp(const MyApp());

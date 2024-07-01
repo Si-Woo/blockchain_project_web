@@ -88,15 +88,15 @@ class Home extends StatelessWidget {
                 width: size.width,
                 height: 2,
               ),
-              Container(
-                color: Colors.white,
-                margin: const EdgeInsets.only(top: 20),
-                width: size.width,
-                height: 150,
-                child: Text(
-                  "앱 다운로드 링크 넣기",
-                ),
-              ),
+              // Container(
+              //   color: Colors.white,
+              //   margin: const EdgeInsets.only(top: 20),
+              //   width: size.width,
+              //   height: 150,
+              //   child: Text(
+              //     "앱 다운로드 링크 넣기",
+              //   ),
+              // ),
               Container(
                   margin: const EdgeInsets.only(left: 70, right: 70),
                   child: Image.asset("images/logo.png")),
@@ -159,15 +159,15 @@ class Home extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
-                color: Colors.white,
-                margin: const EdgeInsets.only(top: 20),
-                width: size.width,
-                height: 100,
-                child: Text(
-                  "앱 다운로드 링크 넣기",
-                ),
-              ),
+              // Container(
+              //   color: Colors.white,
+              //   margin: const EdgeInsets.only(top: 20),
+              //   width: size.width,
+              //   height: 100,
+              //   child: Text(
+              //     "앱 다운로드 링크 넣기",
+              //   ),
+              // ),
               Container(
                   margin: const EdgeInsets.only(left: 70, right: 70),
                   child: Image.asset(
