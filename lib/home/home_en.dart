@@ -126,6 +126,18 @@ class HomeEn extends StatelessWidget {
         ),
       );
     } else {
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////  ///////  //////////////        ///////          ///////                    ////  /////////////////////                 //////////////
+////////////  /  ////  /  /////////  /////////  /////  ////////  /////////////  //////////////  /////////////////////  /////////////////////////////
+///////////  //  ///  //  ///////  ////////////  ////  //////////  ///////////  //////////////  /////////////////////  /////////////////////////////
+//////////  ///  //  ///  ///////  ////////////  ////  //////////  ///////////  //////////////  /////////////////////  /////////////////////////////
+/////////  ////  /  ////  ///////  ////////////  ////  ////////  /////////////  //////////////  /////////////////////  /////////////////////////////
+////////  /////  ///////  ///////  ////////////  ////          ///////////////  //////////////  /////////////////////                 //////////////
+///////  ///////////////  ///////  ////////////  ////  ////////  /////////////  //////////////  /////////////////////  /////////////////////////////
+//////  ////////////////  ///////  ////////////  ////  /////////  ////////////  //////////////  /////////////////////  /////////////////////////////
+/////  /////////////////  ////////  /////////  //////  //////////  ///////////  //////////////  /////////////////////  /////////////////////////////
+////  //////////////////  //////////        /////////             /////                   ////                  /////                  /////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       return Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
@@ -142,24 +154,29 @@ class HomeEn extends StatelessWidget {
               height: 2.0,
             ),
           ),
-          actions: const [
+          actions: [
             Row(
               children: [
-                Text(
-                  "한국어",
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, color: textColor),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Home()));
+                  },
+                  child: const Text(
+                    "한국어",
+                    style: TextStyle(color: textColor),
+                  ),
                 ),
-                Text(
-                  "  |  ",
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, color: textColor),
-                ),
-                Text(
-                  "Eng",
-                  style: TextStyle(color: textColor),
-                ),
-                SizedBox(width: 15),
+                // Text(
+                //   "  |  ",
+                //   style:
+                //       TextStyle(fontWeight: FontWeight.bold, color: textColor),
+                // ),
+                // Text(
+                //   "Eng",
+                //   style: TextStyle(color: textColor),
+                // ),
+                const SizedBox(width: 15),
               ],
             ),
           ],
@@ -177,13 +194,13 @@ class HomeEn extends StatelessWidget {
               //   ),
               // ),
               Container(
-                  margin: const EdgeInsets.only(left: 70, right: 70),
+                  margin: const EdgeInsets.only(left: 20, right: 20),
                   child: Image.asset(
                     "images/logo.png",
                     width: 500,
                   )),
               Container(
-                margin: const EdgeInsets.only(left: 80, right: 80),
+                margin: const EdgeInsets.only(left: 30, right: 30),
                 child: const Text(
                   "Blockchain Project aims to create a better world through blockchain technology, which is transforming our world with its innovativeness and potential."
                   " We believe that blockchain technology, based on transparency, reliability, and a decentralized system, can lead to changes across various industries.\n\n"
