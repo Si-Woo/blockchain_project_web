@@ -31,7 +31,7 @@ jobs:
       #   run: echo "tuti20.com" > ./CNAME
 
       - name: Deploy to Github Pages
-        uses: peaceiris/actions-gh-pages@v3.9.3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.MY_SECRET_KEY}}
           publish_dir: ./build/web
