@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planetchain/component/color.dart';
+import 'package:planetchain/drawer/drawer_en.dart';
 import 'package:planetchain/router/route_path.dart';
 import 'package:planetchain/router/router_delegate.dart';
 
@@ -28,38 +29,45 @@ class HomeEn extends StatelessWidget {
                         width: 150,
                       ),
                       const SizedBox(width: 30),
-                      // Row(
-                      //   children: [
-                      //     InkWell(
-                      //       onTap: () {
-                      //         Navigator.pushNamed(context, '/info');
-                      //       },
-                      //       child: const Text(
-                      //         "소개",
-                      //         style: TextStyle(
-                      //           fontSize: 22,
-                      //           color: textColor,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     const SizedBox(width: 20),
-                      //     Text(
-                      //       "제품",
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //         color: textColor,
-                      //       ),
-                      //     ),
-                      //     const SizedBox(width: 20),
-                      //     Text(
-                      //       "Contact",
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //         color: textColor,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
+                      Row(
+                        children: [
+                          // InkWell(
+                          //   onTap: () {
+                          //     // Navigator.pushNamed(context, '/info');
+                          //   },
+                          //   child: const Text(
+                          //     "소개",
+                          //     style: TextStyle(
+                          //       fontSize: 22,
+                          //       color: textColor,
+                          //     ),
+                          //   ),
+                          // ),
+                          const SizedBox(width: 20),
+                          InkWell(
+                            onTap: () {
+                              final delegate = Router.of(context).routerDelegate
+                                  as MyRouterDelegate;
+                              delegate.changePage(RoutePath.donationEn());
+                            },
+                            child: const Text(
+                              "Donation",
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: textColor,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          // const Text(
+                          //   "Contact",
+                          //   style: TextStyle(
+                          //     fontSize: 22,
+                          //     color: textColor,
+                          //   ),
+                          // ),
+                        ],
+                      ),
                     ],
                   ),
                   Row(
@@ -141,6 +149,7 @@ class HomeEn extends StatelessWidget {
       return Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: textColor),
           backgroundColor: backgroundColor,
           centerTitle: true,
           title: Image.asset(
@@ -182,6 +191,7 @@ class HomeEn extends StatelessWidget {
             ),
           ],
         ),
+        drawer: const DrawerMenuEn(),
         body: SingleChildScrollView(
           child: Column(
             children: [

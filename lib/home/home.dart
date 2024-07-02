@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:planetchain/component/color.dart';
-import 'package:planetchain/home/home_en.dart';
+import 'package:planetchain/drawer/drawer.dart';
 import 'package:planetchain/router/route_path.dart';
 import 'package:planetchain/router/router_delegate.dart';
 
@@ -29,38 +29,45 @@ class Home extends StatelessWidget {
                         width: 150,
                       ),
                       const SizedBox(width: 30),
-                      // Row(
-                      //   children: [
-                      //     InkWell(
-                      //       onTap: () {
-                      //         Navigator.pushNamed(context, '/info');
-                      //       },
-                      //       child: const Text(
-                      //         "소개",
-                      //         style: TextStyle(
-                      //           fontSize: 22,
-                      //           color: textColor,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     const SizedBox(width: 20),
-                      //     Text(
-                      //       "제품",
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //         color: textColor,
-                      //       ),
-                      //     ),
-                      //     const SizedBox(width: 20),
-                      //     Text(
-                      //       "Contact",
-                      //       style: TextStyle(
-                      //         fontSize: 22,
-                      //         color: textColor,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
+                      Row(
+                        children: [
+                          // InkWell(
+                          //   onTap: () {
+                          //     // Navigator.pushNamed(context, '/info');
+                          //   },
+                          //   child: const Text(
+                          //     "소개",
+                          //     style: TextStyle(
+                          //       fontSize: 22,
+                          //       color: textColor,
+                          //     ),
+                          //   ),
+                          // ),
+                          const SizedBox(width: 20),
+                          InkWell(
+                            onTap: () {
+                              final delegate = Router.of(context).routerDelegate
+                                  as MyRouterDelegate;
+                              delegate.changePage(RoutePath.donation());
+                            },
+                            child: const Text(
+                              "도네이션",
+                              style: TextStyle(
+                                fontSize: 22,
+                                color: textColor,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          // const Text(
+                          //   "Contact",
+                          //   style: TextStyle(
+                          //     fontSize: 22,
+                          //     color: textColor,
+                          //   ),
+                          // ),
+                        ],
+                      ),
                     ],
                   ),
                   Row(
@@ -79,7 +86,7 @@ class Home extends StatelessWidget {
                         onTap: () {
                           final delegate = Router.of(context).routerDelegate
                               as MyRouterDelegate;
-                          delegate.changePage(RoutePath.english());
+                          delegate.changePage(RoutePath.homeEn());
                         },
                         child: const Text(
                           "ENG",
@@ -142,6 +149,7 @@ class Home extends StatelessWidget {
       return Scaffold(
         backgroundColor: backgroundColor,
         appBar: AppBar(
+          iconTheme: const IconThemeData(color: textColor),
           backgroundColor: backgroundColor,
           centerTitle: true,
           title: Image.asset(
@@ -172,7 +180,7 @@ class Home extends StatelessWidget {
                   onTap: () {
                     final delegate =
                         Router.of(context).routerDelegate as MyRouterDelegate;
-                    delegate.changePage(RoutePath.english());
+                    delegate.changePage(RoutePath.homeEn());
                   },
                   child: const Text(
                     "Eng",
@@ -184,6 +192,7 @@ class Home extends StatelessWidget {
             ),
           ],
         ),
+        drawer: const DrawerMenu(),
         body: SingleChildScrollView(
           child: Column(
             children: [
