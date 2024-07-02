@@ -1,5 +1,5 @@
 # 1 워크플로의 이름 지정
-name: Flutter Tuti Web CI
+name: Flutter Blockchain project CI
 # 2 워크플로가 시작될 조건 지정
 on:
   push:
