@@ -159,7 +159,9 @@ class HomeEn extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, '/');
+                    final delegate =
+                        Router.of(context).routerDelegate as MyRouterDelegate;
+                    delegate.changePage(RoutePath.home());
                   },
                   child: const Text(
                     "한국어",
