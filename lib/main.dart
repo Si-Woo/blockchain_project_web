@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:planetchain/home/home.dart';
-import 'package:planetchain/home/home_en.dart';
+import 'package:planetchain/router/router_delegate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +11,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Blockchain Project',
+      routerDelegate: MyRouterDelegate(),
+      routeInformationParser: MyRouteInformationParser(),
       // theme: ThemeData(
       //   // This is the theme of your application.
       //   //
@@ -34,13 +35,13 @@ class MyApp extends StatelessWidget {
       //   useMaterial3: true,
       // ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      // initialRoute: '/',
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
-      routes: {
-        '/': (context) => const Home(),
-        '/en': (context) => const HomeEn(),
-        // '/info': (context) => const Info(),
-      },
+      // routes: {
+      //   '/': (context) => const Home(),
+      //   '/en': (context) => const HomeEn(),
+      // '/info': (context) => const Info(),
+      // },
     );
   }
 }

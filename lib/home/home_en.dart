@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:planetchain/component/color.dart';
-import 'package:planetchain/home/home.dart';
+import 'package:planetchain/router/route_path.dart';
+import 'package:planetchain/router/router_delegate.dart';
 
 class HomeEn extends StatelessWidget {
   const HomeEn({super.key});
@@ -75,10 +76,9 @@ class HomeEn extends StatelessWidget {
                       // ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Home()));
+                          final delegate = Router.of(context).routerDelegate
+                              as MyRouterDelegate;
+                          delegate.changePage(RoutePath.home());
                         },
                         child: const Text(
                           "한국어",
@@ -159,8 +159,7 @@ class HomeEn extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Home()));
+                    Navigator.pushNamed(context, '/');
                   },
                   child: const Text(
                     "한국어",
