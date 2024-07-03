@@ -383,7 +383,7 @@ class DonationEn extends StatelessWidget {
                   labelStyle: TextStyle(
                     color: textColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 24,
+                    fontSize: 20,
                   ),
                   indicatorWeight: 3,
                   tabs: [
@@ -398,7 +398,7 @@ class DonationEn extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 2600,
+                  height: 2500,
                   child: TabBarView(
                     children: [
                       SingleChildScrollView(
@@ -414,14 +414,14 @@ class DonationEn extends StatelessWidget {
                                     Text(
                                       "1. From the landing page of your wallet, make sure you're in the account from which you want to transact, and hit the 'send' button in the middle of the screen.\n",
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: textColor,
                                       ),
                                     ),
                                     Text(
                                       "2. Now you need to input the public address of the recipient. If you already have addresses saved in your address book, they will appear now.",
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: textColor,
                                       ),
                                     ),
@@ -441,7 +441,7 @@ class DonationEn extends StatelessWidget {
                                 child: Text(
                                   "3. Enter the amount of tokens you want to send and click next.",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: textColor,
                                   ),
                                 ),
@@ -462,7 +462,7 @@ class DonationEn extends StatelessWidget {
                                     Text(
                                       "4. Now you're presented with the estimated gas fees of your transaction, which you can also adjust. Double-checking the recipient address before clicking 'Confirm' to proceed with the transaction is generally a good idea.",
                                       style: TextStyle(
-                                        fontSize: 20,
+                                        fontSize: 18,
                                         color: textColor,
                                       ),
                                     ),
@@ -489,7 +489,7 @@ class DonationEn extends StatelessWidget {
                                 child: Text(
                                   "5. You will then be redirected to the homepage, where you can see a list of your recent transactions on the 'Activity' tab.",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: textColor,
                                   ),
                                 ),
@@ -519,7 +519,7 @@ class DonationEn extends StatelessWidget {
                                 child: Text(
                                   "1. From anywhere in MetaMask, click the wallet actions button in the middle of the tab bar. From here, tap the'send' button.",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: textColor,
                                   ),
                                 ),
@@ -537,7 +537,7 @@ class DonationEn extends StatelessWidget {
                                 child: Text(
                                   "2. Now you'll need to input the address you want to send to. Either paste in the address from your clipboard (i.e. another app) or select one from your address book.",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: textColor,
                                   ),
                                 ),
@@ -555,7 +555,7 @@ class DonationEn extends StatelessWidget {
                                 child: Text(
                                   "3. Now you'll be taken to a screen where you can input the amount you want to send. You can also change the token type if needed by tapping its name in the blue box directly above the amount.",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: textColor,
                                   ),
                                 ),
@@ -573,7 +573,7 @@ class DonationEn extends StatelessWidget {
                                 child: Text(
                                   "4. When you tap 'Next', you will see the confirmation screen. Here you will see the details of your transaction, including the gas fee you're going to pay.",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: textColor,
                                   ),
                                 ),
