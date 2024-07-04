@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:planetchain/component/color.dart';
 import 'package:planetchain/drawer/drawer.dart';
 import 'package:planetchain/router/route_path.dart';
@@ -81,6 +82,35 @@ class Donation extends StatelessWidget {
                   margin: const EdgeInsets.only(top: 20),
                   width: size.width,
                   height: 2,
+                ),
+                Container(
+                  margin: const EdgeInsets.only(top: 20),
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "MetaMask 지갑 주소: ",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.deepOrange,
+                          ),
+                        ),
+                        Container(
+                          margin: const EdgeInsets.only(top: 3),
+                          child: const SelectableText(
+                            "0x9Eb7EED3B851317872238d4b7A29E09bbDc514Ca",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: textColor,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 20),
@@ -380,6 +410,67 @@ class Donation extends StatelessWidget {
               children: [
                 const SizedBox(height: 20),
                 Container(
+                  margin: const EdgeInsets.only(left: 20, top: 20, right: 20),
+                  width: size.width,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.deepOrange,
+                    ),
+                  ),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "MetaMask 주소",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.deepOrange,
+                        ),
+                      ),
+                      Row(
+                        children: <Widget>[
+                          Flexible(
+                            child: Container(
+                              margin:
+                                  const EdgeInsets.only(left: 15, bottom: 3),
+                              child: const Text(
+                                "0x9Eb7EED3B851317872238d4b7A29E09bbDc514Ca",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  color: textColor,
+                                ),
+                                maxLines: 2,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            icon: const Icon(
+                              Icons.copy,
+                              size: 18,
+                              color: Colors.grey,
+                            ),
+                            onPressed: () {
+                              Clipboard.setData(const ClipboardData(
+                                  text:
+                                      "0x9Eb7EED3B851317872238d4b7A29E09bbDc514Ca"));
+                              // 사용자에게 텍스트가 복사되었다는 피드백을 제공할 수 있습니다.
+
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("주소가 복사되었습니다."),
+                                  duration: Duration(seconds: 1),
+                                ),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
                   margin: const EdgeInsets.only(top: 20),
                   child: const Center(
                     child: Text(
@@ -413,7 +504,7 @@ class Donation extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: 2500,
+                  height: 2800,
                   child: TabBarView(
                     physics: const NeverScrollableScrollPhysics(),
                     children: [
